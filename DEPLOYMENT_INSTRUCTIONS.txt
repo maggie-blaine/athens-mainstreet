@@ -1,0 +1,78 @@
+# Athens Main Street App — Deployment Instructions
+# ====================================================
+# Give this document to your developer or tech volunteer.
+# Estimated time: 30–45 minutes. No coding experience required.
+
+
+## WHAT YOU HAVE
+This folder contains the Athens Main Street board management app.
+It connects to a Supabase database so all board members see the
+same live data in real time.
+
+
+## STEP 1 — SET UP THE DATABASE (5 minutes)
+
+1. Go to https://supabase.com and sign in to the Athens Main Street project
+2. In the left sidebar, click "SQL Editor"
+3. Click "New query"
+4. Open the file called SETUP_DATABASE.sql from this folder
+5. Select all the text (Ctrl+A) and copy it (Ctrl+C)
+6. Paste it into the Supabase SQL editor
+7. Click the green "Run" button
+8. You should see a success message — database is ready!
+
+
+## STEP 2 — DEPLOY THE APP ON VERCEL (15 minutes)
+
+1. Go to https://vercel.com and create a free account (use Google sign-in)
+
+2. In the Vercel dashboard, click "Add New Project"
+
+3. Choose "Import Third-Party Git Repository" OR use the drag-and-drop:
+   - Click "Deploy" then drag this entire folder onto the page
+
+4. If asked for framework, select "Create React App"
+
+5. Click "Deploy" — Vercel will build the app automatically
+
+6. Wait about 60 seconds — you'll get a live URL like:
+   athens-mainstreet.vercel.app
+
+
+## STEP 3 — SHARE WITH BOARD MEMBERS
+
+1. Copy the Vercel URL
+2. Text or email it to all board members
+3. Tell them to open it in their phone browser (Chrome or Safari)
+4. On iPhone: tap the Share button → "Add to Home Screen"
+   On Android: tap the 3-dot menu → "Add to Home Screen"
+5. It will appear as an icon on their phone like a real app!
+
+
+## TROUBLESHOOTING
+
+Problem: App loads but data doesn't save
+Fix: Make sure you ran the SETUP_DATABASE.sql script in Step 1
+
+Problem: "Error connecting to database"  
+Fix: Check that the Supabase project is active at supabase.com
+
+Problem: Changes don't show up for other users
+Fix: Make sure the real-time section of the SQL script ran successfully.
+     Go to Supabase → Database → Replication and confirm all 5 tables are listed.
+
+Problem: Build fails on Vercel
+Fix: Make sure you're uploading the whole folder, not just the src folder.
+     The folder should contain: package.json, public/, and src/
+
+
+## QUESTIONS?
+The app was built with React and Supabase.
+Any web developer will be familiar with both.
+The main app code is in: src/App.jsx
+
+
+## FUTURE UPGRADES (optional, when ready)
+- Add user login so only board members can edit data
+- Set up automatic email reminders for meetings
+- Add a custom domain (e.g. board.athenstnmainstreet.org)
